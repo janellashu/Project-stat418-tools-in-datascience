@@ -1,0 +1,6 @@
+sklearn
+numpy
+plotly
+pandas
+dash
+dash_daq
