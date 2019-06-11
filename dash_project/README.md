@@ -5,3 +5,4 @@
 * Two logistic models (See EDA_PreprocessText_Model.ipynb for code)
 
 (should look something like this)
+<img src="https://github.com/janellashu/Project-stat418-tools-in-datascience/blob/master/figures/dash_app_preview.png" alt="drawing" width="800"/>
