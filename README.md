@@ -4,11 +4,11 @@
 In Reddit’s 2017 transparency report,  a list of 944 accounts suspected to have originated from the Russian Internet Research Agency (IRA). The agency has engaged in online influence operations on behalf of Russian business and political interests, including divisive U.S. political and social issues. More than 1000 employees are reportedly worked in a single building of the agency in 2015.</br>
 
 <b>Exploratory Data Analysis</b></br>
-First I looked at the top 10 subreddits that the Russiana accounts were posting in.
+First I looked at the top 10 subreddits that the Russian accounts were posting in.
 
 <p align="center"><img src="figures/top10subreddit.png" alt="drawing" width="800"/></p>
 
-I choose to collect submissions from the subreddit Bad_Cop_No_Donut from Janurary 1, 2016 to December 31, 2016. My dataset had 12,272 submissions total (11,688 from normal accounts and 584 from Russian accounts). Approximately 4.4% of the submissions were made by suspect accounts. 
+I choose to collect submissions from the subreddit Bad_Cop_No_Donut from Janurary 1, 2016 to December 31, 2016. My dataset has 12,272 submissions (11,688 from normal accounts and 584 from Russian accounts). Approximately 4.4% of the submissions were made by suspect accounts. 
 
 Then I looked at the top 20 most frequently used words by Russian and normal accounts.
 
@@ -44,19 +44,21 @@ I applied PCA to the TF-IDF vector created from indiviual words to reduce dimens
 <p align="center"><img src="figures/screePlot.png" alt="drawing" width="850"/></p>
 
 <b>Model Selection</b> </br>
+The dataset was split into approximately 70/30 for training and test set. A list of russian users and normal users was created from my dataset. I randomly selected one of the two lists and then randomly selected a users from that list. All of the submissions from that user went into training set until at least 70% of all submissions were in the training set. The remaining submissions became the test set.
+ 
 I created 3 models where the output was whether or not a submission title was posted by a Russian account (1) or not (0).
 * Model 1: -3.181 + 1.066 * PC1 + 0.489 * PC2
   * PC1 and PC2 are the first 2 principal components of the PCA. 
 * Model 2:-3.573 + 1.279 * cop + 1.643 * black + 1.306 * man + 1.596 * teen
   * cop, black, man and teen refers to the tf-idf score for those words, respectively. 
 * Model 3:-3.88+ 6.41 * russian_prop + 0.038 * black_man
-  * russian_prop is an indicator of whether or not the submission linked to a russian propoganda website.
+  * russian_prop is an indicator of whether or not the submission linked to a Russian propaganda website.
 
 <b>Cross Validation</b></br>
 
 <p align="center"><img src="figures/ConfusionMatrix.png" alt="drawing" width="550"/></p>
 
-From the confusion matrices we can see that tf-idf scores are not a good predictor of whether an account is russian or not. 
+From the confusion matrices we can see that tf-idf scores are not a good predictor of whether an account is Russian or not. 
 
 <b>Dash App</b></br>
 I created a dash plotly app that is hosted on Amazon ec2 at http://52.27.3.193:8050/. For more information please see the [README.md](dash_project/README.md) in the dash_project folder. The dash app will be avaliable until June 17, 2017.
