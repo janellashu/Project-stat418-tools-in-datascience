@@ -1,5 +1,10 @@
 <h2 align="center">STAT 418: Final Project</h2> 
 <h3 align= "center">Reddit Submission Analysis of Suspect Accounts</h3> 
+
+1. [Background](README.md#Background)
+2. [Exploratory Data Analysis](README.md#Exploratory-Data-Analysis)
+3. [Dash App](README.md#Dash-App)
+
 <p> <b>Background</b> </br>
 In Reddit’s 2017 transparency report,  a list of 944 accounts suspected to have originated from the Russian Internet Research Agency (IRA). The agency has engaged in online influence operations on behalf of Russian business and political interests, including divisive U.S. political and social issues. More than 1000 employees are reportedly worked in a single building of the agency in 2015.</br>
 
@@ -61,7 +66,7 @@ I created 3 models where the output was whether or not a submission title was po
 From the confusion matrices we can see that tf-idf scores are not a good predictor of whether an account is Russian or not. 
 
 <b>Dash App</b></br>
-I created a dash plotly app that is hosted on Amazon ec2 at http://52.27.3.193:8050/. For more information please see the [README.md](dash_project/README.md) in the dash_project folder. The dash app will be avaliable until June 17, 2017.
+I created a dash plotly app that is hosted on Amazon ec2 [here](http://52.27.3.193:8050/). For more information please see the [README.md](dash_project/README.md) in the dash_project folder. The dash app will be avaliable until June 17, 2017.
 
 </p>
 
