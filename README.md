@@ -1,10 +1,5 @@
 <h2 align="center">STAT 418: Final Project</h2> 
 <h3 align= "center">Reddit Submission Analysis of Suspect Accounts</h3> 
-
-1. [Background](README.md#Background)
-2. [Exploratory Data Analysis](README.md#Exploratory-Data-Analysis)
-3. [Dash App](README.md#Dash-App)
-
 <p> <b>Background</b> </br>
 In Reddit’s 2017 transparency report,  a list of 944 accounts suspected to have originated from the Russian Internet Research Agency (IRA). The agency has engaged in online influence operations on behalf of Russian business and political interests, including divisive U.S. political and social issues. More than 1000 employees are reportedly worked in a single building of the agency in 2015.</br>
 
