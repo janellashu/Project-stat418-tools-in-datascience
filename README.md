@@ -1,14 +1,9 @@
-<p align="center">
-  status of this github repo: <b>incomplete</b> <br/>
-  (will update status when complete)
-</p>
-
-<h2 align="center">STAT 418: Final Project</h1> 
+<h2 align="center">STAT 418: Final Project</h2> 
 <h3 align= "center">Reddit Submission Analysis of Suspect Accounts</h3> 
 <p> <b>Background</b> </br>
-In Reddit’s 2017 transparency report,  a list of 944 accounts suspected to have originated from the Russian Internet Research Agency (IRA). The agency has engaged in online influence operations on behalf of Russian business and political interests, including divisive U.S. political and social issues. More than 1000 employees are reportedly worked in a single building of the agency in 2015. </br>
+In Reddit’s 2017 transparency report,  a list of 944 accounts suspected to have originated from the Russian Internet Research Agency (IRA). The agency has engaged in online influence operations on behalf of Russian business and political interests, including divisive U.S. political and social issues. More than 1000 employees are reportedly worked in a single building of the agency in 2015.</br>
 
-<b>Exploratory Data Analysis</b> </br>
+<b>Exploratory Data Analysis</b></br>
 First I looked at the top 10 subreddits that the Russiana accounts were posting in.
 
 <p align="center"><img src="figures/top10subreddit.png" alt="drawing" width="800"/></p>
@@ -26,7 +21,7 @@ I also compared the number of submissions per week and the number of submissions
 <p align="center"><img src="figures/Weekly.png" alt="drawing" width="700"/></p>
 <p align="center"><img src="figures/Hourly.png" alt="drawing" width="700"/></p>
 
-<b>Data Collection</b> </br>
+<b>Data Collection</b></br>
 I used PushShift.io to collect submission ids from the subreddit Bad_Cop_No_Donut . With the collected submission ids I used PRAW to get:
 * **id**: submission id
 * **author**: submission’s author
@@ -36,12 +31,11 @@ I used PushShift.io to collect submission ids from the subreddit Bad_Cop_No_Donu
 * **selftext**: submission’s selftext
 * **title**: submission's title
 * **url**: the URL the submission links to, or the permalink if a self post
-</br>
 
-<b>Preprocessing Text</b> </br>
+<b>Preprocessing Text</b></br>
 For each submission title, I removed stop words and punctuation, converted all words to lower case and lemmatized and tokenized each word. </br>
 
-<b>Text Frequency - Inverse Document Frequency (TF-IDF)</b> </br>
+<b>Text Frequency - Inverse Document Frequency (TF-IDF)</b></br>
 Using my pre-processed submission titles, I converted text into vectors using a method called Term Frequency – Inverse Document (TF – IDF). Term Frequency summarized how often a given word appears within a document (i.e. a submission title) and Inverse Document Frequency down scales words that appear a lot across documents. TF-IDF are word frequency scores that try to highlight words that appear frequency in a document but not across all documents. I calculated TF-IDF for individual words and word pairs.
 
 <b>PCA</b> </br>
@@ -62,7 +56,7 @@ I created 3 models where the output was whether or not a submission title was po
 
 <p align="center"><img src="figures/ConfusionMatrix.png" alt="drawing" width="550"/></p>
 
-From the confusion matrices we can see that title submission is not a good predictor of whether an account is russian or not. 
+From the confusion matrices we can see that tf-idf scores are not a good predictor of whether an account is russian or not. 
 
 <b>Dash App</b></br>
 I created a dash plotly app that is hosted on Amazon ec2 at http://52.27.3.193:8050/. For more information please see the [README.md](dash_project/README.md) in the dash_project folder. The dash app will be avaliable until June 17, 2017.
